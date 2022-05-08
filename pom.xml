@@ -52,6 +52,26 @@
                     </excludes>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <from>
+                        <image>openjdk:19-slim</image>
+                    </from>
+                    <to>
+                        <image>registry.hub.docker.com/longdd90jp/spring-jib-app</image>
+                        <auth>
+                            <username>longdd90jp</username>
+                            <password>Dangdinhlong90</password>
+                        </auth>
+                        <tags>
+                            <tag>${project.version}</tag>
+                        </tags>
+                    </to>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
