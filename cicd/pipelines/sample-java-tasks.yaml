@@ -1,0 +1,27 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: git-clone
+spec:
+  workspaces:
+    - name: output
+      description: source-dir
+  params:
+    - name: url
+      description: 'https://github.com/piomin/sample-spring-kotlin-microservice.git'
+      type: string
+    - name: revision
+      description: 'master'
+      type: string
+    - name: gitInitImage
+      description: "gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/git-init:v0.29.0"
+      type: string
+      default: "gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/git-init:v0.29.0"
+  steps:
+    - name: clone
+      image: $(params.gitInitImage)
+      env:
+        - name: PARAM_URL
+          value: $(params.url)
+        - name: PARAM_REVISION
+          value: $(params.revision)

@@ -1,0 +1,24 @@
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: TriggerTemplate
+metadata:
+  name: sample-github-template
+spec:
+  params:
+    - default: main
+      description: The git revision
+      name: git-revision
+    - description: The git repository url
+      name: https://github.com/ec-sys/sample-cicd-java.git
+  resourcetemplates:
+    - apiVersion: tekton.dev/v1beta1
+      kind: PipelineRun
+      metadata:
+        generateName: sample-java-pipeline-run
+      spec:
+        pipelineRef:
+          name: sample-java-pipeline
+        serviceAccountName: pipeline
+        workspaces:
+          - name: source-dir
+            persistentVolumeClaim:
+              claimName: tekton-workspace

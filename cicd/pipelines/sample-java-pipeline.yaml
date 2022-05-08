@@ -1,0 +1,57 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: sample-java-pipeline
+spec:
+  workspaces:
+    - name: source-dir
+  tasks:
+    - name: git-clone
+      params:
+        - name: url
+          value: 'https://github.com/ec-sys/sample-cicd-java.git'
+        - name: revision
+          value: main
+      taskRef:
+        kind: Task
+        name: git-clone
+      workspaces:
+        - name: output
+          workspace: source-dir
+    - name: junit-tests
+      params:
+        - name: GOALS
+          value:
+            - test
+      runAfter:
+        - git-clone
+      taskRef:
+        kind: Task
+        name: maven
+      workspaces:
+        - name: source
+          workspace: source-dir
+        - name: maven-settings
+          workspace: source-dir
+    - name: get-version
+      runAfter:
+        - junit-tests
+      taskRef:
+        kind: Task
+        name: maven-get-project-version
+      workspaces:
+        - name: source
+          workspace: source-dir
+    - name: build-and-push-image
+      params:
+        - name: IMAGE
+          value: >-
+            registry.hub.docker.com/longdd90jp/sample-cicd-java:$(tasks.get-version.results.version)
+      runAfter:
+        - get-version
+      taskRef:
+        kind: Task
+        name: jib-maven
+      workspaces:
+        - name: source
+          workspace: source-dir

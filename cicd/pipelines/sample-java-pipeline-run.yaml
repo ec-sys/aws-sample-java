@@ -1,0 +1,11 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: sample-java-pipeline-run
+spec:
+  pipelineRef:
+    name: sample-java-pipeline
+  workspaces:
+    - name: source-dir
+      persistentVolumeClaim:
+        claimName: tekton-workspace
