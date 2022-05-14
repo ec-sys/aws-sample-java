@@ -3,7 +3,7 @@ kind: EventListener
 metadata:
   name: sample-github-listener
 spec:
-  serviceAccountName: pipeline
+  serviceAccountName: tekton-triggers-example-sa
   triggers:
     - bindings:
         - kind: ClusterTriggerBinding

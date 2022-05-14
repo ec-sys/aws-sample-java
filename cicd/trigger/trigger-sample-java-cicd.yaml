@@ -8,7 +8,7 @@ spec:
       description: The git revision
       name: git-revision
     - description: The git repository url
-      name: https://github.com/ec-sys/sample-cicd-java.git
+      name: git-repo-url
   resourcetemplates:
     - apiVersion: tekton.dev/v1beta1
       kind: PipelineRun
@@ -17,7 +17,7 @@ spec:
       spec:
         pipelineRef:
           name: sample-java-pipeline
-        serviceAccountName: pipeline
+        serviceAccountName: tekton-triggers-example-sa
         workspaces:
           - name: source-dir
             persistentVolumeClaim:

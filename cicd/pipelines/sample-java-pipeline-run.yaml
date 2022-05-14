@@ -5,6 +5,7 @@ metadata:
 spec:
   pipelineRef:
     name: sample-java-pipeline
+  serviceAccountName: default
   workspaces:
     - name: source-dir
       persistentVolumeClaim:
