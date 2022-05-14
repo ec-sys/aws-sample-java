@@ -1,1 +1,19 @@
 https://github.com/tektoncd/triggers/blob/main/docs/getting-started/README.md
+
+mvn compile com.google.cloud.tools:jib-maven-plugin:2.5.0:build -Dimage=localhost:5000/spring-jib-app:1.0
+
+https://www.codeproject.com/Articles/1263817/How-to-Setup-Our-Own-Private-Docker-Registry
+
+docker run -d -p 5000:5000 --name registry registry:2
+
+service account thì xem trên trang chủ của tekton
+
+docker run -d -p 5000:5000 -v D:/localhub/registry:/var/lib/registry --restart=always --name hub.local registry:2.8
+
+docker tag alpine:3 localhost:5000/my-alpine:1.0
+docker push localhost:5000/my-alpine:1.0
+docker pull localhost:5000/my-alpine:1.0
+
+docker pull localhost:5000/spring-jib-app:1.0
+
+https://stackoverflow.com/questions/57812972/failure-on-push-to-docker-registry-using-mvn-compile-jibbuild

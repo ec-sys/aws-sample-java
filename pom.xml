@@ -60,12 +60,10 @@
                     <from>
                         <image>openjdk:11-slim</image>
                     </from>
-                    <to>
-                        <auth>
-                            <username>longdd90jp</username>
-                            <password>Dangdinhlong90</password>
-                        </auth>
-                    </to>
+<!--                    <to>-->
+<!--                        <image>localhost:5000/spring-jib-app:1.0</image>-->
+<!--                    </to>-->
+                    <allowInsecureRegistries>true</allowInsecureRegistries>
                 </configuration>
             </plugin>
         </plugins>

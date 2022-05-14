@@ -46,7 +46,7 @@ spec:
       params:
         - name: IMAGE
           value: >-
-            registry.hub.docker.com/longdd90jp/sample-cicd-java:$(tasks.get-version.results.version)
+            127.0.0.1:5000/sample-cicd-java:$(tasks.get-version.results.version)
       runAfter:
         - get-version
       taskRef:
