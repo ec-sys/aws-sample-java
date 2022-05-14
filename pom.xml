@@ -60,9 +60,6 @@
                     <from>
                         <image>openjdk:11-slim</image>
                     </from>
-<!--                    <to>-->
-<!--                        <image>localhost:5000/spring-jib-app:1.0</image>-->
-<!--                    </to>-->
                     <allowInsecureRegistries>true</allowInsecureRegistries>
                 </configuration>
             </plugin>

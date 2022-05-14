@@ -46,7 +46,7 @@ spec:
       params:
         - name: IMAGE
           value: >-
-            127.0.0.1:5000/sample-cicd-java:$(tasks.get-version.results.version)
+            hub.docker.local:5000/sample-cicd-java:$(tasks.get-version.results.version)
       runAfter:
         - get-version
       taskRef:

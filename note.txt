@@ -17,3 +17,9 @@ docker pull localhost:5000/my-alpine:1.0
 docker pull localhost:5000/spring-jib-app:1.0
 
 https://stackoverflow.com/questions/57812972/failure-on-push-to-docker-registry-using-mvn-compile-jibbuild
+
+mvn compile jib:build
+
+<!--                    <to>-->
+<!--                        <image>hub.docker.local:5000/spring-jib-app:1.0</image>-->
+<!--                    </to>-->
