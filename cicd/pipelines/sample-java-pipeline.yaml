@@ -47,6 +47,8 @@ spec:
         - name: IMAGE
           value: >-
             hub.docker.local:5000/sample-cicd-java:$(tasks.get-version.results.version)
+        - name: INSECUREREGISTRY
+          value: "true"
       runAfter:
         - get-version
       taskRef:

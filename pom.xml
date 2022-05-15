@@ -61,6 +61,7 @@
                         <image>openjdk:11-slim</image>
                     </from>
                     <allowInsecureRegistries>true</allowInsecureRegistries>
+                    <sendCredentialsOverHttp>false</sendCredentialsOverHttp>
                 </configuration>
             </plugin>
         </plugins>
