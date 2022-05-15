@@ -60,8 +60,9 @@
                     <from>
                         <image>openjdk:11-slim</image>
                     </from>
-                    <allowInsecureRegistries>true</allowInsecureRegistries>
-<!--                    <sendCredentialsOverHttp>false</sendCredentialsOverHttp>-->
+                    <to>
+                        <image>longdd90jp/sample-cicd-java:0.2</image>
+                    </to>
                 </configuration>
             </plugin>
         </plugins>

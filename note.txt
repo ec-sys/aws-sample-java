@@ -25,3 +25,8 @@ mvn compile jib:build
 <!--                    </to>-->
 
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+
+
+mvn compile jib:build -Djib.to.auth.username=longdd90jp -Djib.to.auth.password=Dangdinhlong90
+
+<!--                    <allowInsecureRegistries>true</allowInsecureRegistries>-->
