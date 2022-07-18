@@ -33,3 +33,13 @@ mvn compile jib:build -Djib.to.auth.username=longdd90jp -Djib.to.auth.password=D
 
 https://viblo.asia/p/kubernetes-series-bai-9-statefulsets-deploying-replicated-stateful-applications-07LKXkXp5V4
 https://techhay.vn/kubernetes-practice-trien-khai-nodejs-microservice-tren-kubernetes-phan-2/#:~:text=%C4%90%C3%A2y%20l%C3%A0%20m%E1%BB%99t%20c%C3%B4ng%20c%E1%BB%A5,config%20cho%20th%C3%A0nh%20ph%E1%BA%A7n%20m%E1%BB%9Bi.
+
+ORDER_MONGO_URL: mongodb://mongodb-service:27017/ec_product
+
+
+MONGO_URL=mongodb://ec-sys-root:ec-sys-11115@localhost:27018/ec_uaa
+mongo "mongodb://ec-sys-root:ec-sys-11115@localhost:27018"
+
+db.createUser({ user: "root" , pwd: "root", roles: ["userAdminAnyDatabase", "dbAdminAnyDatabase", "readWriteAnyDatabase"]})
+
+db.createUser({user: "tom", pwd: "jerry", roles:["root"]})
