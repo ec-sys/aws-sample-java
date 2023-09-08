@@ -1,6 +1,0 @@
-kubectl port-forward svc/el-sample-github-listener 8082:8080
-kubectl port-forward service/el-sample-github-listener 8082:8080
-
-kubectl port-forward svc/el-sample-github-listener 8082:8080 -n default
-
-service account thì xem trên trang chủ của tekton

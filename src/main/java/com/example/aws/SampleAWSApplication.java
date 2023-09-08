@@ -1,13 +1,13 @@
-package com.example.cicd;
+package com.example.aws;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SampleCICDApplication {
+public class SampleAWSApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SampleCICDApplication.class, args);
+        SpringApplication.run(SampleAWSApplication.class, args);
     }
 
 }
