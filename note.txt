@@ -43,3 +43,6 @@ mongo "mongodb://ec-sys-root:ec-sys-11115@localhost:27018"
 db.createUser({ user: "root" , pwd: "root", roles: ["userAdminAnyDatabase", "dbAdminAnyDatabase", "readWriteAnyDatabase"]})
 
 db.createUser({user: "tom", pwd: "jerry", roles:["root"]})
+
+
+https://github.com/awslabs/aws-cloudformation-templates/blob/master/aws/services/VPC/VPC_With_Managed_NAT_And_Private_Subnet.yaml
